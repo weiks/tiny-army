@@ -1,0 +1,12 @@
+{
+    "name": "DOTween.Modules",
+    "references": [],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Android",
+        "Editor",
+        "iOS"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

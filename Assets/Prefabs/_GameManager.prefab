@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1571927859695728}
+  m_IsPrefabAsset: 1
+--- !u!1 &1571927859695728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4975118464792816}
+  - component: {fileID: 114128120699883032}
+  - component: {fileID: 114453854872534800}
+  m_Layer: 0
+  m_Name: _GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4975118464792816
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1571927859695728}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -6.610294, z: -0.009765625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114128120699883032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1571927859695728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78045e6b19c336742988c709b4bb3d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testFloat: 12
+  wave:
+    count: 5
+    speed: 10
+    laneEnemyTypes: 00000000010000000200000005000000
+  startupGameState: 0
+  playerSprites:
+  - {fileID: 21300000, guid: 82e69eecb41f52b49a6177ef3ef66753, type: 3}
+  - {fileID: 21300000, guid: e464ff7f06fae2a45ab3621fd757cd4f, type: 3}
+  - {fileID: 21300000, guid: fd32b9d17b873dd4fb7a80d74ccba9a7, type: 3}
+  - {fileID: 21300000, guid: de4ac477743ac084f95cdae7e62e07bc, type: 3}
+  soliderIndex: 1
+  mapIndex: 1
+  isInputEnabled: 1
+  playerUnitPrefab: {fileID: 114318012056813798, guid: 95dc668efffbf3944a20a789f8ae0e6a,
+    type: 2}
+  laneSpawnPoints:
+  - -3
+  - 0
+  - 3
+  currentGameState: 0
+  backgrounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  powerupDuration: 8
+--- !u!114 &114453854872534800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1571927859695728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93f0cb685feefc4459183f18aa8d54ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveIndex: 0
+  waveInterval: 2.5
+  waves:
+  - count: 1
+    speed: 3
+    laneEnemyTypes: 000000000000000000000000
+  - count: 1
+    speed: 3.5
+    laneEnemyTypes: 000000000000000000000000
+  - count: 2
+    speed: 3.5
+    laneEnemyTypes: 040000000400000004000000
+  enemyNames:
+  - Human
+  - Bike
+  - Plane
+  - Nuke
+  - Boss
+  intervalBetweenBoss: 13
+  powerupOrder: 0100000003000000020000000400000000000000
+  powerupTotalWaveIndex: 0
+  totalWaveIndex: 0
+  isBossOnScene: 0
+  currentCount: 0
+  isSpawningEnemy: 0
+  isChangingWave: 0

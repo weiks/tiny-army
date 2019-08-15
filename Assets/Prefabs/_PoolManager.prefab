@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1366226077307806}
+  m_IsPrefabAsset: 1
+--- !u!1 &1366226077307806
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4033846496726254}
+  - component: {fileID: 114088867157377808}
+  m_Layer: 0
+  m_Name: _PoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4033846496726254
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1366226077307806}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.2469651, y: 0.9, z: 0.036891386}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114088867157377808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1366226077307806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd49be6e953f134a884f4e2c6456d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - objectName: PistolBullet
+    objectToPool: {fileID: 1963198882545256, guid: f1e49900a68559646926cf252c645747,
+      type: 2}
+  - objectName: Blast
+    objectToPool: {fileID: 1912048429344134, guid: deda98c922ad4f84e8d1408e4d162994,
+      type: 2}
+  - objectName: Human
+    objectToPool: {fileID: 1953451041309712, guid: 782006c5ea1dc6846a2004947242885e,
+      type: 2}
+  - objectName: Bike
+    objectToPool: {fileID: 1727499954312402, guid: 28736affe1c92c24490f25742aa65c45,
+      type: 2}
+  - objectName: Plane
+    objectToPool: {fileID: 1550141034528400, guid: 07f54eb93ac468d44ab4f0d9bcae7c59,
+      type: 2}
+  - objectName: Nuke
+    objectToPool: {fileID: 1393608282890036, guid: 9c503bb0dc6e7a04e8ddc7c4eb66077c,
+      type: 2}
+  - objectName: PlayerUnit
+    objectToPool: {fileID: 1312745665214098, guid: 95dc668efffbf3944a20a789f8ae0e6a,
+      type: 2}
+  - objectName: GraveStone
+    objectToPool: {fileID: 1847201917460208, guid: fbff8a0da6c4acf4c92431d0ff9c2361,
+      type: 2}
+  - objectName: MachineGunBullet
+    objectToPool: {fileID: 1963198882545256, guid: 339a1aee40f8adc4fb44d4066e550133,
+      type: 2}
+  - objectName: MiniGunBullet
+    objectToPool: {fileID: 1963198882545256, guid: aa79eaa935d688b4683cfdacc34a029b,
+      type: 2}
+  - objectName: RocketBullet
+    objectToPool: {fileID: 1963198882545256, guid: 95ebfbaca54b89d498b6c0e9924f4a25,
+      type: 2}
+  - objectName: Bullet-03
+    objectToPool: {fileID: 1963198882545256, guid: aa79eaa935d688b4683cfdacc34a029b,
+      type: 2}
+  - objectName: Pistol
+    objectToPool: {fileID: 1656173627253658, guid: 79f72bdd9f35ab243a4684c51f4c11f9,
+      type: 2}
+  - objectName: MachineGun
+    objectToPool: {fileID: 1045130859447310, guid: 0eccfa760b802524ca1e4c1ede1efb76,
+      type: 2}
+  - objectName: MiniGun
+    objectToPool: {fileID: 1803948329993040, guid: 6ffe6250bc15cf84c93c71d578470226,
+      type: 2}
+  - objectName: Flamethrower
+    objectToPool: {fileID: 1458954342851702, guid: 1b9e0d1d8dfef7f44961c27e1c1e0f6c,
+      type: 2}
+  - objectName: Rocket
+    objectToPool: {fileID: 1704307986434554, guid: e3eb41649b4dc8a45b6b263e1159f822,
+      type: 2}
+  - objectName: FlamethrowerBullet
+    objectToPool: {fileID: 1963198882545256, guid: f1e49900a68559646926cf252c645747,
+      type: 2}
+  - objectName: Boss
+    objectToPool: {fileID: 1727499954312402, guid: e82098537c45dce4488c3f27c836a2d7,
+      type: 2}

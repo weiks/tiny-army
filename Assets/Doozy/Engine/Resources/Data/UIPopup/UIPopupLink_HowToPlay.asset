@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17215f689fb19554ab6b81c2308113df, type: 3}
+  m_Name: UIPopupLink_HowToPlay
+  m_EditorClassIdentifier: 
+  PopupName: HowToPlay
+  Prefab: {fileID: 1550092248990998, guid: 6829f612a4b2c71429bd9256eef3eda0, type: 2}

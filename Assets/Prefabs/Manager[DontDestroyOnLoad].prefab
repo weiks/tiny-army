@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1398573336898606}
+  m_IsPrefabAsset: 1
+--- !u!1 &1398573336898606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4447216180044330}
+  - component: {fileID: 114849965763522866}
+  - component: {fileID: 114114374056878202}
+  - component: {fileID: 114773733782369534}
+  - component: {fileID: 114521976533602026}
+  - component: {fileID: 114329787101544526}
+  m_Layer: 0
+  m_Name: Manager[DontDestroyOnLoad]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4447216180044330
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1398573336898606}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114114374056878202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1398573336898606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b43d5e8ef56c14c8f370561c3a6ca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playfabID: 
+--- !u!114 &114329787101544526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1398573336898606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50902c153f064b94295514042c0b6ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isContinue: 0
+  rewardOnce: 1
+  isBeatMyBestMode: 0
+  menu: 0
+  restart: 0
+  isScoreDirty: 0
+  retriesTillAd: 2
+  prizePool: 2
+  playerID: 0
+  battleFieldID: 0
+  score: 0
+  highScore: 0
+--- !u!114 &114521976533602026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1398573336898606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ccb267f3f0967e469efe2c054fba864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shouldPlayAds: 1
+  appId: ca-app-pub-5892611422306924~6565766674
+  bannerAdId: ca-app-pub-3940256099942544/6300978111
+  interstitialAdId: ca-app-pub-3940256099942544/1033173712
+  rewardAdId: ca-app-pub-3940256099942544/5224354917
+--- !u!114 &114773733782369534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1398573336898606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3defe9a207a048e43ab02f910c90d873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114849965763522866
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1398573336898606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 254e620d4ef97504aa560d8c69725050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveVersion: 3
+  coins: 0
+  dailyRewards: {fileID: 0}
+  playerXP: 0
+  maxXP: 500
+  xpMultiplier: 500
+  playerLevel: 0
+  highScore: 0
+  totalKills: 0
+  saveData: 
+  loadData: 
+  isLogin: 0
+  playerRankID: 0
+  gunFramesID: 0
+  gunFramesStatus: 0100000000000000000000000000000000000000
+  dogTagID: 0
+  dogTagStatus: 01000000000000000000000000000000
+  playerID: 0
+  playerStatus: 01000000000000000000000000000000
+  battleFieldID: 0
+  battleFieldStatus: 01000000000000000000000000000000
+  savePlayerStatus: 
+  loadplayerStatus: 
+  saveBattlefieldStatus: 
+  loadBattlefieldStatus: 
+  saveDogTagStatus: 
+  loadDogTagStatus: 
+  saveGunFramesStatus: 
+  loadGunFramesStatus: 
