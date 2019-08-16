@@ -121,7 +121,7 @@ namespace Hammerplay {
 #if UNITY_ANDROID
             PlayfabSignInWithGoogle ();
 #elif UNITY_IOS
-            Debug.Log ("iOS signup here");
+            PlayfabSignInWithIOS ();
 #endif
 
         }
@@ -153,19 +153,25 @@ namespace Hammerplay {
 
 #if UNITY_IOS
         // PlayFab sign in for IOS
-        private void PlayFabSignInWithGameCenter () {
+        private void PlayfabSignInWithIOS () {
 
-            PlayFabClientAPI.LoginWithGameCenter (new LoginWithGameCenterRequest () {
-                    TitleId = PlayFabSettings.TitleId,
-                        CreateAccount = true,
-                        InfoRequestParameters = new GetPlayerCombinedInfoRequestParams () {
-                            GetPlayerProfile = true
-                        },
-                        PlayerId = Social.Active.localUser.id
-                },
-                PlayFabSignInSuccess,
-                OnPlayFabError);
+            // PlayFabClientAPI.LoginWithGameCenter (new LoginWithGameCenterRequest () {
+            //         TitleId = PlayFabSettings.TitleId,
+            //             CreateAccount = true,
+            //             InfoRequestParameters = new GetPlayerCombinedInfoRequestParams () {
+            //                 GetPlayerProfile = true
+            //             },
+            //             PlayerId = Social.Active.localUser.id
+            //     },
+            //     OnPlayFabSignInSuccess,
+            //     OnPlayFabError);
 
+            PlayFabClientAPI.LoginWithIOSDeviceID (new LoginWithIOSDeviceIDRequest () {
+                CreateAccount = true,
+                    DeviceId = SystemInfo.deviceUniqueIdentifier,
+                    DeviceModel = SystemInfo.deviceModel,
+                    OS = SystemInfo.operatingSystem,
+            }, OnPlayFabSignInSuccess, OnPlayFabError);
         }
 #endif
 
@@ -222,8 +228,13 @@ namespace Hammerplay {
             }
 
             if (isStartupSequence) {
+#if UNITY_IOS
+                var builder = ConfigurationBuilder.Instance (StandardPurchasingModule.Instance (AppStore.AppleAppStore));
+#endif
+#if UNITY_ANDROID 
                 var builder = ConfigurationBuilder.Instance (StandardPurchasingModule.Instance (AppStore.GooglePlay));
 
+#endif
                 // Register each item from the catalog
                 foreach (var item in catalog) {
                     builder.AddProduct (item.ItemId, ProductType.Consumable);
@@ -510,6 +521,29 @@ namespace Hammerplay {
             // Invoke receipt validation
             // This will not only validate a receipt, but will also grant player corresponding items
             // only if receipt is valid.
+#if UNITY_IOS
+            PlayFabClientAPI.ValidateIOSReceipt (new ValidateIOSReceiptRequest () {
+                    // Pass in currency code in ISO format
+                    CurrencyCode = e.purchasedProduct.metadata.isoCurrencyCode,
+                        // Convert and set Purchase price
+                        PurchasePrice = (int) (e.purchasedProduct.metadata.localizedPrice * 100),
+
+                        ReceiptData = googleReceipt.PayloadData.json
+
+                }, (result) => {
+                    Debug.Log ("Validation successful!");
+                    FetchUserInventory ();
+                },
+                error => Debug.Log ("Validation failed: " + error.GenerateErrorReport ())
+            );
+
+            return PurchaseProcessingResult.Complete;
+#endif
+
+            // Invoke receipt validation
+            // This will not only validate a receipt, but will also grant player corresponding items
+            // only if receipt is valid.
+#if UNITY_ANDROID 
             PlayFabClientAPI.ValidateGooglePlayPurchase (new ValidateGooglePlayPurchaseRequest () {
                     // Pass in currency code in ISO format
                     CurrencyCode = e.purchasedProduct.metadata.isoCurrencyCode,
@@ -527,6 +561,7 @@ namespace Hammerplay {
             );
 
             return PurchaseProcessingResult.Complete;
+#endif
         }
 
         [ContextMenu ("Consume Quarters Purchased In Inventory")]
@@ -572,7 +607,6 @@ namespace Hammerplay {
 
         public delegate void PurchaseStatusHandler (PurchaseStatus status);
         public static event PurchaseStatusHandler OnPurchaseStatusChanged;
-
 
         private void AwardQuarters (int amount) {
             Quarters.Instance.AwardQuarters (amount, delegate (string transactionHash) {
