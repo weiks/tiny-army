@@ -446,7 +446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 5.03, y: -0.00006103518}
+  m_AnchoredPosition: {x: 5.03, y: -0.000026932239}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &108591316
@@ -7652,11 +7652,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9509de02ddf495b920686930ec4278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  APP_ID: VIvyA4mPMGLalRu5W9T3
-  APP_KEY: povpjt3teugpsqnbhp727rprd0aau1u
-  SERVER_API_TOKEN: y036mcebi9h8ryclgtdah2dr8v1uznf7obqqn52e01rartz8m4e2j3f
-  ETHEREUM_ADDRESS: 0xca17e28eec647ff3d7e467980dd56e600d4a457d
-  environment: 0
+  APP_ID: UPrQrrwwVNFkYzMGOql2
+  APP_KEY: x8tkb4lqxrfvmr5du1w8vdx96zieyrc6
+  SERVER_API_TOKEN: 3lf698m7h6m72h6j9d5k5ulua69pb5lin4pglolmra4jhal6na8d9
+  ETHEREUM_ADDRESS: 0x979a67f51a20f43f6aef84a986ddfb59c69d007e
+  environment: 2
   useAutoapproval: 0
 --- !u!4 &1048645255
 Transform:
@@ -7688,6 +7688,12 @@ MonoBehaviour:
   deauthorizeByDefault: 0
   isNeverAuthorized: 0
   isGuest: 0
+  storeNamespace: tinyarmy
+  itemNames:
+  - com.poq.tinyarmy.4000quarters
+  - com.poq.tinyarmy.1600quarters
+  - com.poq.tinyarmy.400quarters
+  itemPrices: a00f00004006000090010000
 --- !u!114 &1048645257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7699,14 +7705,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c47a1aff28f70f44990c8505ceb2d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  androidAppId: ca-app-pub-3940256099942544~3347511713
-  androidBannerAdId: ca-app-pub-3940256099942544/6300978111
-  androidInterstitialAdId: ca-app-pub-3940256099942544/1033173712
-  androidRewardAdId: ca-app-pub-3940256099942544/5224354917
-  iOSAppId: ca-app-pub-3940256099942544~1458002511
-  iOSBannerAdId: ca-app-pub-3940256099942544/2934735716
-  iOSInterstitialAdId: ca-app-pub-3940256099942544/4411468910
-  iOSRewardAdId: ca-app-pub-3940256099942544/1712485313
+  androidAppId: ca-app-pub-7376414457548631~1413470125
+  androidBannerAdId: ca-app-pub-7376414457548631/5268954656
+  androidInterstitialAdId: ca-app-pub-7376414457548631/2534980108
+  androidRewardAdId: ca-app-pub-7376414457548631/4969571753
+  iOSAppId: ca-app-pub-7376414457548631~9806965460
+  iOSBannerAdId: ca-app-pub-7376414457548631/7180802127
+  iOSInterstitialAdId: ca-app-pub-7376414457548631/7620566071
+  iOSRewardAdId: ca-app-pub-7376414457548631/7324272354
 --- !u!1 &1074313759
 GameObject:
   m_ObjectHideFlags: 0

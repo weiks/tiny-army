@@ -66,6 +66,12 @@ namespace Hammerplay {
         private bool isStartupSequence = true;
 
         private IEnumerator Start () {
+            for (int i = 0; i < itemNames.Count; i++)
+            {
+                awardAmounts.Add(string.Format("{0}_{1}", storeNamespace, itemNames[i]), itemPrices[i]);
+            }
+            
+
             PlayFabSettings.TitleId = playFabTitleId;
             yield return new WaitForSeconds (0.5f);
             isStartupSequence = true;
@@ -516,21 +522,26 @@ namespace Hammerplay {
             Debug.Log ("Processing transaction: " + e.purchasedProduct.transactionID);
 
             // Deserialize receipt
-            var googleReceipt = GooglePurchase.FromJson (e.purchasedProduct.receipt);
+
+
 
             // Invoke receipt validation
             // This will not only validate a receipt, but will also grant player corresponding items
             // only if receipt is valid.
 #if UNITY_IOS
-            PlayFabClientAPI.ValidateIOSReceipt (new ValidateIOSReceiptRequest () {
-                    // Pass in currency code in ISO format
-                    CurrencyCode = e.purchasedProduct.metadata.isoCurrencyCode,
-                        // Convert and set Purchase price
-                        PurchasePrice = (int) (e.purchasedProduct.metadata.localizedPrice * 100),
+            Debug.Log("Purchased Product Receipt" + e.purchasedProduct.receipt);
+            ApplePurchase appleReceipt = ApplePurchase.FromJson(e.purchasedProduct.receipt);
+            Debug.Log("Purchased Product Payload" + appleReceipt.Payload);
 
-                        ReceiptData = googleReceipt.PayloadData.json
+            PlayFabClientAPI.ValidateIOSReceipt(new ValidateIOSReceiptRequest() {
+                // Pass in currency code in ISO format
+                CurrencyCode = e.purchasedProduct.metadata.isoCurrencyCode,
+                // Convert and set Purchase price
+                PurchasePrice = (int)(e.purchasedProduct.metadata.localizedPrice * 100),
 
-                }, (result) => {
+                ReceiptData = appleReceipt.Payload
+
+            }, (result) => {
                     Debug.Log ("Validation successful!");
                     FetchUserInventory ();
                 },
@@ -544,6 +555,8 @@ namespace Hammerplay {
             // This will not only validate a receipt, but will also grant player corresponding items
             // only if receipt is valid.
 #if UNITY_ANDROID 
+            var googleReceipt = GooglePurchase.FromJson (e.purchasedProduct.receipt);
+
             PlayFabClientAPI.ValidateGooglePlayPurchase (new ValidateGooglePlayPurchaseRequest () {
                     // Pass in currency code in ISO format
                     CurrencyCode = e.purchasedProduct.metadata.isoCurrencyCode,
@@ -574,8 +587,18 @@ namespace Hammerplay {
             }
         }
 
-        private Dictionary<string, int> awardAmounts = new Dictionary<string, int> () { { "largequarters", 4000 }, { "mediumquarters", 1600 }, { "smallquarters", 400 }
-        };
+        [SerializeField]
+        private string storeNamespace = "com.poq.productname";
+
+        [SerializeField]
+        private List<string> itemNames;
+
+        [SerializeField]
+        private List<int> itemPrices;
+
+        [SerializeField]
+        private Dictionary<string, int> awardAmounts = new Dictionary<string, int>();
+        
 
         private void ConsumePurchased (ItemInstance itemInstance) {
             PlayFabClientAPI.ConsumeItem (new ConsumeItemRequest {
@@ -805,6 +828,19 @@ namespace Hammerplay {
         public static GooglePurchase FromJson (string json) {
             var purchase = JsonUtility.FromJson<GooglePurchase> (json);
             purchase.PayloadData = PayloadData.FromJson (purchase.Payload);
+            return purchase;
+        }
+    }
+
+    public class ApplePurchase
+    {
+        public string Store;
+        public string TransactionID;
+        public string Payload;
+
+        public static ApplePurchase FromJson (string json)
+        {
+            var purchase = JsonUtility.FromJson<ApplePurchase>(json);
             return purchase;
         }
     }
