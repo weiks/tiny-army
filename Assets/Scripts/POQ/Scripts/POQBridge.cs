@@ -68,7 +68,7 @@ namespace Hammerplay {
         private IEnumerator Start () {
             for (int i = 0; i < itemNames.Count; i++)
             {
-                awardAmounts.Add(string.Format("{0}_{1}", storeNamespace, itemNames[i]), itemPrices[i]);
+                awardAmounts.Add(string.Format("{0}.{1}", storeNamespace, itemNames[i]), itemPrices[i]);
             }
             
 

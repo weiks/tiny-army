@@ -446,7 +446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 5.03, y: -0.000026932239}
+  m_AnchoredPosition: {x: 5.03, y: -0.000000042534417}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &108591316
@@ -7688,11 +7688,11 @@ MonoBehaviour:
   deauthorizeByDefault: 0
   isNeverAuthorized: 0
   isGuest: 0
-  storeNamespace: tinyarmy
+  storeNamespace: com.poq.tinyarmy
   itemNames:
-  - com.poq.tinyarmy.4000quarters
-  - com.poq.tinyarmy.1600quarters
-  - com.poq.tinyarmy.400quarters
+  - 4000quarters
+  - 1600quarters
+  - 400quarters
   itemPrices: a00f00004006000090010000
 --- !u!114 &1048645257
 MonoBehaviour:
