@@ -159,7 +159,7 @@ PlayerSettings:
     iOS: com.poq.tinyarmy
   buildNumber:
     iOS: 2
-  AndroidBundleVersionCode: 8
+  AndroidBundleVersionCode: 9
   AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
