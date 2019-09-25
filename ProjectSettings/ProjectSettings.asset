@@ -159,7 +159,7 @@ PlayerSettings:
     iOS: com.poq.tinyarmy
   buildNumber:
     iOS: 2
-  AndroidBundleVersionCode: 9
+  AndroidBundleVersionCode: 10
   AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -685,7 +685,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     1: dUI_TextMeshPro
     4: DEV;dUI_TextMeshPro
-    7: DEV;dUI_TextMeshPro
+    7: PRODUCTION;dUI_TextMeshPro
     13: dUI_TextMeshPro
     14: dUI_TextMeshPro
     18: dUI_TextMeshPro
